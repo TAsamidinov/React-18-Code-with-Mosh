@@ -2,6 +2,7 @@ import Alert from "./components/Alert";
 import Buttons from "./components/Buttons";
 import { useState } from "react";
 import ListGroup from "./components/ListGroup";
+import { FaCalendarAlt } from 'react-icons/fa';
 
 function App() {
   const [showAlert, setShowAlert] = useState(false);
@@ -12,6 +13,7 @@ function App() {
       {showAlert && (
         <Alert onClose={() => setShowAlert(false)}>Submited Succesfully!</Alert>
       )}
+      <FaCalendarAlt size="50" />
       <ListGroup
         items={items}
         heading="Countries"
