@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 interface ListItemProps {
-  active: boolean;
+  $active: boolean;
 }
 interface Props {
   items: string[];
@@ -17,15 +17,18 @@ const List = styled.ul`
   list-style: none;
 `;
 const ListItem = styled.li<ListItemProps>`
-  padding: 10px 15px;
+  padding: 10px 20px;
   border: 1px solid #ddd;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 
   &:hover {
-    background: #0d6efd;
+    background: red;
   }
 
-  background: ${(props) => (props.active ? '#0d6efd' : "none")};
+  color: white;
+  background: ${(props) => (props.$active ? "red" : "#0d6efd")};
 `;
 
 function ListGroup({ items, heading, onSelectItem }: Props) {
@@ -44,7 +47,8 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
       <h1> {heading} </h1>
       <List>
         {items.map((item, index) => (
-          <ListItem active
+          <ListItem
+            $active={index === selectedIndex}
             key={item}
             onClick={() => {
               setSelectedIndex(index);
