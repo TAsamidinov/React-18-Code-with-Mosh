@@ -7,7 +7,7 @@ interface Props {
 const Alert = ({ children, onClose }: Props) => {
   return (
     <div>
-        <div className="alert alert-danger alert-dismissible">
+        <div className="alert alert-primary alert-dismissible">
             {children}
             <button type="button" className="btn-close" onClick={onClose} data-bs-dismiss="alert" aria-label="Close"></button>
         </div>

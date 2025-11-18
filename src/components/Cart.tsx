@@ -1,23 +1,17 @@
-import { MouseEvent } from "react";
-import { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-interface ListItemProps {
-  $active: boolean;
-}
 interface Props {
   items: string[];
   heading: string;
   itemsCount: number;
-  onSelectItem: (item: string) => void;
 }
-
 const List = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;
 `;
-const ListItem = styled.li<ListItemProps>`
+const ListItem = styled.li`
   padding: 10px 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -29,12 +23,10 @@ const ListItem = styled.li<ListItemProps>`
   }
 
   color: white;
-  background: ${(props) => (props.$active ? "red" : "#0d6efd")};
+  background: #0d6efd;
 `;
 
-function ListGroup({ items, heading, itemsCount, onSelectItem }: Props) {
-  const [selectedIndex, setSelectedIndex] = useState(-1);
-
+const Cart = ({ items, heading, itemsCount }: Props) => {
   if (items.length === 0) {
     return (
       <>
@@ -54,20 +46,11 @@ function ListGroup({ items, heading, itemsCount, onSelectItem }: Props) {
       </h1>
       <List>
         {items.map((item, index) => (
-          <ListItem
-            $active={index === selectedIndex}
-            key={item}
-            onClick={() => {
-              setSelectedIndex(index);
-              onSelectItem(item);
-            }}
-          >
-            {item}
-          </ListItem>
+          <ListItem key={item}>{item}</ListItem>
         ))}
       </List>
     </>
   );
-}
+};
 
-export default ListGroup;
+export default Cart;
