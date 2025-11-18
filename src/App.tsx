@@ -4,6 +4,7 @@ import Cart from "./components/Cart";
 import Buttons from "./components/Buttons/Buttons";
 import ListGroup from "./components/ListGroup";
 import Player from "./components/Player";
+import Pizza from "./components/Pizza";
 
 import { useState } from "react";
 import { FcLikePlaceholder } from "react-icons/fc";
@@ -22,12 +23,16 @@ function App() {
       name: "John",
     },
   });
+  const [pizza, setPizza] = useState({
+    name: "Pepperoni",
+    toppings: ["Cheese", "Pepperoni"],
+  });
 
   return (
     <div>
-      <Player game={game} />
+      <Pizza pizza={pizza} />
 
-      <Buttons color="primary" onClick={() => { setGame({...game, player: { ...game.player, name: 'Jyrgalbek'}})}}>
+      <Buttons color="primary" onClick={() => { setPizza({...pizza, toppings: [...pizza.toppings, 'Olives']})}}>
         Submit
       </Buttons>
 
