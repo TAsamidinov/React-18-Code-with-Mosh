@@ -5,10 +5,12 @@ import Buttons from "./components/Buttons/Buttons";
 import ListGroup from "./components/ListGroup";
 import Player from "./components/Player";
 import Pizza from "./components/Pizza";
+import Product from "./components/Product";
 
 import { useState } from "react";
 import { FcLikePlaceholder } from "react-icons/fc";
 import { FcLike } from "react-icons/fc";
+
 
 
 
@@ -27,12 +29,21 @@ function App() {
     name: "Pepperoni",
     toppings: ["Cheese", "Pepperoni"],
   });
+  
+  const [products, setProducts] = useState({
+    discount: 50,
+    items: [
+      { id: 1, name: "Product 1", price: 100 },
+      { id: 2, name: "Product 2", price: 200 },
+      { id: 3, name: "Product 3", price: 300 },
+    ],
+  })
 
   return (
     <div>
-      <Pizza pizza={pizza} />
+      <Product products = {products}/>
 
-      <Buttons color="primary" onClick={() => { setPizza({...pizza, toppings: [...pizza.toppings, 'Olives']})}}>
+      <Buttons color="primary" onClick={() => { setProducts({...products, items: products.items.map(item => item.id === 3 ? {...item, price: 150} : {...item})})}}>
         Submit
       </Buttons>
 
