@@ -20,7 +20,7 @@ const P = styled.p`
   color: white;
   background: #0d6efd;
 `;
-const ExpandableText = ({ children, maxChars = 10, isExpanded }: Props) => {
+const ExpandableText = ({ children, maxChars = 100, isExpanded }: Props) => {
 
     if (isExpanded || children.length <= maxChars) {
         return <P style={{ whiteSpace: "pre-line" }}>{children}</P>
