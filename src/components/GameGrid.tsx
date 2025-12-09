@@ -6,9 +6,11 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainers from "./GameCardContainers";
 import { Genre } from "../hooks/useGenres";
+import { Platform } from "../hooks/usePlatfroms";
 
 interface GenreProps {
   selectedGenre: Genre | null;
+  selectedPlatform: Platform | null;
 }
 
 interface Game {
@@ -20,8 +22,8 @@ interface FetchGamesResponse {
   results: Game[];
 }
 
-const GameGrid = ({ selectedGenre }: GenreProps) => {
-  const { data, error, isLoading } = useGames(selectedGenre);
+const GameGrid = ({ selectedGenre, selectedPlatform }: GenreProps) => {
+  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return (
