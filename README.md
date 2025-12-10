@@ -1,78 +1,76 @@
 # 🎮 Game Hub
 
-A modern, responsive video game discovery platform built with React, TypeScript, Chakra UI, and the RAWG API. Users can browse games, filter by genre and platform, search for titles, and view critic scores — all with a clean dark-themed UI.
+Game Hub is a video game discovery app built with **React 18** and **TypeScript**.  
+It lets users browse games, filter by genre and platform, and explore new titles with a clean, responsive UI.
 
-## 🚀 Live Demo
+---
 
-https://game-hub-eight-alpha-60.vercel.app/
+## 🌐 Live Demo
 
-## 🛠️ Tech Stack
+👉 **Game Hub on Vercel:** https://game-hub-eight-alpha-60.vercel.app
 
-- React 18
-- TypeScript
-- Chakra UI
-- Vite
-- RAWG Video Games API
-- Vercel (Deployment)
+---
 
 ## ✨ Features
 
-- Browse trending and popular video games  
-- Filter games by genre  
-- Filter games by platform  
-- Search games by name  
-- Dynamic heading based on active filters  
-- Critic score display  
-- Emoji rating indicators  
-- Skeleton loaders  
-- Responsive design  
-- Dark mode optimized UI  
+- 🎲 Browse a large collection of games fetched from an external API  
+- 🧩 Filter games by **genre** and **platform**
+- 🌗 **Dark mode** toggle  
+- 📱 Fully **responsive layout** (desktop, tablet, mobile)
+- ⚡ Fast, modern UI built with **Chakra UI**
+- 🔁 Reusable custom hooks for fetching data
 
-## 📂 Project Structure
+---
 
+## 🧰 Tech Stack
+
+- **Frontend:** React 18, TypeScript
+- **UI Library:** Chakra UI
+- **HTTP Client:** Axios
+- **State & Data Management:** React hooks & custom hooks
+- **Build Tooling:** Vite / Create React App (depending on setup)
+- **Deployment:** Vercel
+
+---
+
+## 📚 About the Course
+
+This project is based on the GameHub app built in the  
+**“Ultimate React 18 – Code with Mosh”** course by **Mosh Hamedani**.
+
+During the course, I learned and practiced:
+
+- Modern React with hooks (useState, useEffect, custom hooks)
+- TypeScript with React components and props
+- Component composition and reusable UI patterns
+- Working with REST APIs
+- Managing loading and error states
+- Responsive layouts with Chakra UI
+- Deploying React apps to production (Vercel)
+
+---
+
+## 📂 Project Structure (high level)
+
+```text
 src/
-components/
-/hooks/
-/services/
-App.tsx  
-main.tsx  
-
-## ⚙️ Installation & Setup
-
-1. Clone the repository:
-
-git clone https://github.com/TAsamidinov/Game-Hub.git  
-cd game-hub  
-
-2. Install dependencies:
-
-npm install  
-
-3. Create a .env file in the root directory:
-
-VITE_RAWG_API_KEY=your_api_key_here  
-
-Get your API key from:  
-https://rawg.io/apidocs  
-
-4. Run the project locally:
-
-npm run dev  
-
-Open in browser:  
-http://localhost:5173
-
-## 🧠 What I Learned
-
-- Custom React hooks  
-- Strong TypeScript typing  
-- API data fetching with Axios  
-- Component-based architecture  
-- UI development with Chakra UI  
-- Responsive layouts  
-- Git workflow  
-- Deployment with Vercel  
-
+  components/
+    GameGrid.tsx
+    GameCard.tsx
+    GameCardSkeleton.tsx
+    GameCardContainer.tsx
+    NavBar.tsx
+    ColorModeSwitch.tsx
+    ...
+  hooks/
+    useGames.ts
+    useGenres.ts
+    useData.ts
+  services/
+    api-client.ts
+  App.tsx
+  main.tsx
+```
 ## 🔮 Future Improvements
 
 - Infinite scrolling  
@@ -85,4 +83,4 @@ http://localhost:5173
 ## 👨‍💻 Author
 
 Temirlan Asamidinov  
-GitHub: https://github.com/TAsamidinov  
+GitHub: https://github.com/TAsamidinov 
