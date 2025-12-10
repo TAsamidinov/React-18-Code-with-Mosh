@@ -6,11 +6,15 @@ import { px } from 'framer-motion'
 import SearchInput from './SearchInput'
 import { CiSearch } from "react-icons/ci";
 
-const navBar = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const navBar = ({onSearch}: Props) => {
   return (
     <HStack padding={'12px'}>
         <Image boxSize={'60px'} src={logo} /> 
-        <SearchInput />
+        <SearchInput onSearch={onSearch} />
         <ColorModeSwitch /> 
     </HStack>
   )
